@@ -37,8 +37,10 @@ export default function Home() {
     const newTasks = structuredClone(tasks);
     //search for a task based on condition
     const task = newTasks.find((x) => x.id === taskId);
-    task.completed = !task.completed;
-    setTasks(newTasks);
+    if(task){
+      task.completed = !task.completed;
+      setTasks(newTasks);
+    };
 
   };
 
